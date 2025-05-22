@@ -8,7 +8,7 @@
 
 class UBoxComponent;
 class UStaticMeshComponent;
-class UPawnMovementComponent;
+class UFloatingPawnMovement;
 class UCameraComponent;
 class USpringArmComponent;
 
@@ -45,15 +45,16 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Components", BlueprintReadOnly)
 	TObjectPtr<UStaticMeshComponent> Left;
 
-	UPROPERTY(VisibleAnywhere, Category = "Components", BlueprintReadOnly)
-	TObjectPtr<UPawnMovementComponent> Movement;
+	UPROPERTY(VisibleAnywhere, Category = "Movement", BlueprintReadOnly)
+	TObjectPtr<UFloatingPawnMovement> Movement;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components", BlueprintReadOnly)
 	TObjectPtr<UCameraComponent> Camera;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components", BlueprintReadWrite)
-	TObjectPtr<USpringArmComponent> CameraArm;
+	TObjectPtr<USpringArmComponent> SpringArm;
 
-	float MoveSpeed;
+	float BodyMoveSpeed;
+	float PropellerRotateSpeed;
 	float Boost;
 };
