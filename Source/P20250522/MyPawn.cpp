@@ -55,7 +55,7 @@ AMyPawn::AMyPawn()
 
 	Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Movement"));
 
-	BodyMoveSpeed = 120.0f;
+	BodyMoveSpeed = 300.0f;
 	PropellerRotateSpeed = 180.0f;
 	Boost = 0.5f;
 
@@ -77,8 +77,8 @@ void AMyPawn::Tick(float DeltaTime)
 
 	AddMovementInput(GetActorForwardVector(), Boost);
 
-	Right->AddRelativeRotation(FRotator(PropellerRotateSpeed, 0.0f, 0.0f));
-	Left->AddRelativeRotation(FRotator(PropellerRotateSpeed, 0.0f, 0.0f));
+	Right->AddRelativeRotation(FRotator(PropellerRotateSpeed * DeltaTime, 0.0f, 0.0f));
+	Left->AddRelativeRotation(FRotator(PropellerRotateSpeed * DeltaTime, 0.0f, 0.0f));
 }
 
 // Called to bind functionality to input
