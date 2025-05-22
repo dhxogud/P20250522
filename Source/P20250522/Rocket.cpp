@@ -24,7 +24,7 @@ ARocket::ARocket()
 		Body->SetStaticMesh(SM_Body.Object);
 	}
 	Body->SetupAttachment(Box);
-	Body->AddRelativeRotation(FRotator(0.0f, 0.0f, -90.0f));
+	Body->AddRelativeRotation(FRotator(-90.0f, 0.0f, 0.0f));
 
 	Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Movement"));
 
