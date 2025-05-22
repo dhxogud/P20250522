@@ -54,7 +54,12 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Components", BlueprintReadWrite)
 	TObjectPtr<USpringArmComponent> SpringArm;
 
+	UPROPERTY(VisibleAnywhere, Category = "Data", BlueprintReadWrite)
 	float BodyMoveSpeed;
+
+	UPROPERTY(VisibleAnywhere, Category = "Data", BlueprintReadWrite)
 	float PropellerRotateSpeed;
+
+	UPROPERTY(VisibleAnywhere, Category = "Data", BlueprintReadWrite)
 	float Boost;
 };

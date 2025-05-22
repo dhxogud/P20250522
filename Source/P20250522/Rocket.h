@@ -6,6 +6,10 @@
 #include "GameFramework/Actor.h"
 #include "Rocket.generated.h"
 
+class UBoxComponent;
+class UStaticMeshComponent;
+class UProjectileMovementComponent;
+
 UCLASS()
 class P20250522_API ARocket : public AActor
 {
@@ -22,5 +26,17 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(VisibleAnywhere, Category = "Component", BlueprintReadOnly)
+	TObjectPtr<UBoxComponent> Box;
+
+	UPROPERTY(VisibleAnywhere, Category = "Component", BlueprintReadOnly)
+	TObjectPtr<UStaticMeshComponent> Body;
+
+	UPROPERTY(VisibleAnywhere, Category = "Component", BlueprintReadOnly)
+	TObjectPtr<UProjectileMovementComponent> Movement;
+
+	UPROPERTY(VisibleAnywhere, Category = "Data", BlueprintReadWrite)
+	float MoveSpeed;
 
 };
